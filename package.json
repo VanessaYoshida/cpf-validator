@@ -1,0 +1,35 @@
+{
+  "name": "cpf-validator",
+  "version": "1.0.0",
+  "description": "This library does cpf validation",
+  "main": "index.js",
+  "scripts": {
+    "test":"nyc mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VanessaYoshida/cpf-validator.git"
+  },
+  "keywords": [
+    "cpf",
+    "validator",
+    "cpf",
+    "library",
+    "validação",
+    "de",
+    "cpf",
+    "CPF"
+  ],
+  "author": "Vanessa Yoshida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VanessaYoshida/cpf-validator/issues"
+  },
+  "homepage": "https://github.com/VanessaYoshida/cpf-validator#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.0.0"
+  }
+}
