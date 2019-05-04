@@ -1,7 +1,6 @@
 let chai = require('chai');
 let expect = chai.expect;
 let CPF = require('../lib/index');
-
 describe('cpfValidator()', () => {
   describe('Verificação dos números do CPF', () => {
     it('Deveria retornar true quando o primeiro dígito verificador é zero: 04114512608', () => {
@@ -37,6 +36,28 @@ describe('cpfValidator()', () => {
     }); 
     it('Deveria retornar true para separações com espaço: 874 747 186 77', () => {
       expect(CPF.cpfValidator('874 747 186 77')).to.equal(true);
+    }); 
+  }); 
+  describe('Verificação caso os digitos sejam repetidos', () => {
+    it('Deveria retornar false para números repetidos: 00000000000', () => {
+      expect(CPF.cpfValidator('00000000000')).to.equal(false);
+    });  
+    it('Deveria retornar false para números repetidos: 99999999999', () => {
+      expect(CPF.cpfValidator('99999999999')).to.equal(false);
+    }); 
+    it('Deveria retornar false para números repetidos: 33333333333', () => {
+      expect(CPF.cpfValidator('33333333333')).to.equal(false);
+    }); 
+  });  
+  describe('Verificação para o tipo do campo', () => {
+    it('Deveria retornar false para tipos numéricos: 04114512608', () => {
+      expect(CPF.cpfValidator(04114512610)).to.equal(false);
+    });  
+    it('Deveria retornar false para letras: asdfghjklqw', () => {
+      expect(CPF.cpfValidator('asdfghjklqw')).to.equal(false);
+    });  
+    it('Não deve retornar nada caso o campo esteja vazio: ""', () => {
+      expect('').to.be.empty;
     }); 
   });  
 });    
