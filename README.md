@@ -3,7 +3,7 @@
 
 **Esta biblioteca se destina à fazer a verificação dos dados do CPF para uso em aplicações web.**
 Na versão atual é capaz de verificar se o número do CPF é valido ou não.
-Os números do CPF são criados de acordo com a norma ISO/IEC 7812, onde nela é estabelecido um padrão para a identificação de um cartão eletrônico. 
+O CPF(Cadastro de Pessoa Física)  é um documento brasileiro emitido pela Secretaria da Receita Federal do Ministério da Fazenda. Seu número é composto por 11 dígitos, sendo os dois últimos os dígitos verificadores, que atestam se o número do CPF é válido. 
 
 ## Índice
 
@@ -12,25 +12,22 @@ Os números do CPF são criados de acordo com a norma ISO/IEC 7812, onde nela é
 * [Como Utilizar](#Como-Utilizar)
 * [Para Desenvolvedores](#Para-Desenvolvedores)
 * [Roadmap oficial do projeto](#Roadmap-oficial-do-projeto)
-* [Entenda os Números do CPF](#Entenda-os-Números-do-Cartão-de-Crédito)
-* [Cálculo para verificar o número do Cartão](#Cálculo-para-verificar-o-número-do-Cartão)
+* [Cálculo para verificar o número do CPF](#Cálculo-para-verificar-o-número-do-CPF)
 * [Objetivo deste Projeto](#Objetivo-deste-Projeto)
-* [Outras informações importantes no Cartão](#Outras-informações-importantes-no-Cartão)
 
 ## Ferramentas Utilizadas
 Para esta biblioteca foram utilizados Javascript, Node.JS, Mocha, Chai e Nyc.
-Foi utilizado o Wallaby para fazer Teste Integrado Contínuo.
 E também foi utilizado o Eslint para encontrar padrões problemáticos ou códigos que não seguem determinadas diretrizes de estilo.
 
 ## Como Instalar:
 
 ```shell
 
-$  npm install credit-card-validator
+$  npm install cpf-validator
 
 ou 
 
-$  sudo npm install credit-card-validator
+$  sudo npm install cpf-validator
 
 ```
 
@@ -38,13 +35,13 @@ $  sudo npm install credit-card-validator
 Abra o terminal na pasta em que a biblioteca já está instalada e digite os comandos:
 ```node
 > node
-> const CC = require("validator-credit-card-1");
-> console.log(CC.cardValidator('5526988157883653'))
+> const CPF = require("validator-cpf-1");
+> console.log(CPF.cpfValidator('04114512608')))
 
 >sudo npm test
 
 ```
-Dentro dessa função CC.cardValidator('*numero do CPF*') você pode digitar o número do CPF para saber se é um número válido ou não.
+Dentro dessa função CPF.cpfValidator('*numero do CPF*') você pode digitar outro número de CPF para saber se é um número válido ou não.
 
 
 ## Para Desenvolvedores:
@@ -52,14 +49,14 @@ Caso você esteja querendo entender como funciona a biblioteca e quer fazer test
 Abra o seu terminal, seguindo os passos abaixo você vai criar uma pasta nova e vai instalar o que for necessário:
 
 ```node
-> mkdir pastaCartaoDeCredito
+> mkdir pastaValidadorCpf
 
-> cd pastaCartaoDeCredito
+> cd pastaValidadorCpf
 
 > npm init
 (nesse passo de cima ele cria automático um novo projeto com o arquivo package.json, depois vai ser requerido algumas informações que é necessário preencher)
 
-> npm install validator-credit-card-1 (que é para instalar a biblioteca)
+> npm install validator-cpf (que é para instalar a biblioteca)
 
 > npm install (para instalar o que for necessário para poder trabalhar na biblioteca)
 
@@ -70,39 +67,58 @@ Dentro dessa pasta cria um arquivo echo > index.js (pode ser com o nome que voc�
 Dentro dessa pasta cria um arquivo echo > index.js (pode ser com o nome index.js)
 > code . (para abrir o arquivo com o visual studio. Ou caso use outro editor, abra o arquivo nesse editor)
 E cole os comandos: 
-> const CC = require("credit-card-validator");
-> console.log(CC.cardValidator('5526988157883653'))
+> const CPF = require("cpf-validator");
+> console.log(CPF.cpfValidator('87474718677'))
 ```
-Dentro dessa função CC.cardValidator('*numero do CPF*') você pode digitar o número do CPF para saber se é um número válido ou não.
+Dentro dessa função CPF.cpfValidator('*número do CPF*') você pode digitar o número de outro CPF para saber se é um número válido ou não.
 
 
 ## Roadmap oficial do projeto
 ### versão 1.0.0 (released)
 - Funcionalidades: Verificação se número de CPF é válido ou não.
+- Essa biblioteca também faz a verificação se o CPF está com ponto, hífen ou espaço, e corrige caso esteja com algum desses caracteres.
+- Verifica se a quantidade de números está correta.  
+- Verifica se os dígitos não estão repetidos.
+- Verifica se foi digitado apenas letras ou o campo está vazio.
+- Verifica se o tipo do campo é numérico, e caso seja retorna um erro. Pois só é aceito números do tipo string porque o cpf pode vir de diferentes formas.
 
-## Entenda os Números do CPF
-Os números do CPF se subdividem em grupos, onde cada grupo representam algo.
-- O Primeiro Grupo é o **Número de Identificação do Emissor (Issuer identification Number – IIN)**
-Formado pelos seis primeiros digitos, que referem-se a bandeira do cartão.
-- O Segundo grupo é o **Número da Conta (Account Number ou Account Identifier)** que vai do sétimo dígito até o penúltimo número, utilizado para a identificação do cliente.
-- O Terceiro é o **Dígito Verificador(Check Sum)** que é o último número contido nessa sequência, utilizado para Verificação de Segurança.
-- E o último grupo é o **Código de Segurança do Cartão (Card Security Code – CSC)** que são os dígitos contidos atrás do cartão compostos por três ou quatro dígitos utilizado para transsações não presenciais.
+## Cálculo para verificar o número do CPF
+Os últimos dois números do CPF que comprovam se esse é um número válido ou não. Para isso é necessário fazer o cálculo em duas partes.
 
-## Entenda os Números do CPF
-Os números do CPF se subdividem em grupos, onde cada grupo representam algo.
-- O Primeiro Grupo é o **Número de Identificação do Emissor (Issuer identification Number – IIN)**
-Formado pelos seis primeiros digitos, que referem-se a bandeira do cartão.
-- O Segundo grupo é o **Número da Conta (Account Number ou Account Identifier)** que vai do sétimo dígito até o penúltimo número, utilizado para a identificação do cliente.
-- O Terceiro é o **Dígito Verificador(Check Sum)** que é o último número contido nessa sequência, utilizado para Verificação de Segurança.
-- E o último grupo é o **Código de Segurança do Cartão (Card Security Code – CSC)** que são os dígitos contidos atrás do cartão compostos por três ou quatro dígitos utilizado para transsações não presenciais.
+### Calculando o Primeiro Dígito Verificador
+1. O primeiro dígito verificador do CPF é calculado baseando-se no seguinte algoritmo. 
+![cpf-parte-1](images/calculo-cpf-parte-1.jpg)
+* Vamos supor que o número do CPF é: 222.333.666-38
 
-## Cálculo para verificar o número do Cartão
-O cálculo é feito a partir do Algoritmo de Luhn, que é uma fórmula utilizada para validar uma variedade de números de identificação.
+* Distribua os 9 primeiros dígitos do CPF na primeira linha de uma tabela, e na linha abaixo distribua os pesos 10, 9, 8, 7, 6, 5, 4, 3, 2
 
-Do dígito mais à direita, que é o dígito de verificação, e movendo para a esquerda, dobre o valor de cada segundo dígito. O dígito de verificação não é dobrado; o primeiro dígito dobrado é imediatamente à esquerda do dígito de verificação. Se o resultado dessa operação de duplicação for maior que 9 (por exemplo, 8 × 2 = 16), adicione os dígitos do resultado (por exemplo, 16: 1 + 6 = 7, 18: 1 + 8 = 9) ou, alternativamente , o mesmo resultado final pode ser encontrado ao subtrair 9 desse resultado (por exemplo, 16: 16 - 9 = 7, 18: 18 - 9 = 9).
-Pegue a soma de todos os dígitos.
-Se o módulo total 10 é igual a 0 (se o total terminar em zero), então o número é válido de acordo com a fórmula de Luhn, se der outro resultado não é válida. 
-Um outro método alternativo também é: depois de calcular a soma dos dígitos, multiplique por 9, e do resultado pegue o dígito das unidades (último número do resultado), ele é o dígito verificador.
+* Multiplique os valores de cada coluna
+
+* Calcule a somatória dos resultados
+
+* O resultado obtido (162) será divido por 11. Considere como quociente apenas o valor inteiro obtido na divisão, o **resto** da divisão que será o responsável pelo cálculo do primeiro dígito verificador.
+*Caso o resto for menor que 2, o dígito verificador é zero. Senão você deve subtrair o resto encontrado de onze.
+No nosso caso o resto da divisão é 8. Então temos que subtrair **11 - 8 = 3**.
+
+A primeira parte da conta terminamos, agora vamos para a segunda parte.
+
+### Calculando o Segundo Dígito Verificador
+1. Para calcular o segundo dígito verificador, fazemos o cálculo de forma análoga ao primeiro dígito, acrescentando ao CPF o dígito encontrado no passo anterior. Na segunda linha, os pesos são distribuídos começando por 11.
+![cpf-parte-2](images/calculo-cpf-parte-2.jpg)
+* Faça a somatória da multiplicação das colunas.
+
+* Encontre o resto da divisão da somatória por 11.
+
+* O resto da divisão é 3. Para calcular o dígito verificador, você deve subtrair o resto encontrado de onze.
+
+**11 – 3 = 8**
+
+* Como o resultado da subtração não é menor que 2, o resultado é o próprio dígito verificador.
+
+* Agora já sabemos quais são os dois dígitos verificadores válidos, 0 e 9, podemos afirmar que o CPF hipotético usado no exemplo é válido.
+
+222.333.666-38 (CPF válido)
+123.456.789-10 (CPF inválido)
 
 ## Objetivo deste Projeto
 Construir uma biblioteca que atenda aos requisitos abaixo:
@@ -113,7 +129,3 @@ package.json com nome, versão, descrição, autores, licença, dependências, s
 **test/index.spec.js:** com as rotinas de teste escritas para esta biblioteca. Os testes devem ser implementados com Mocha e NYC
 **.gitignore**para ignorar node_modules ou outras pastas que não devem ser incluídas no controle de versões (git).
 Fazer uso do **TDD (Test Driven Development)** onde seu principal objetivo é criar testes antes de desenvolver determinado código, visando o mínimo de código possível. Os testes passando se faz necessário refatorar até satisfazer o objetivo final que é criar códigos mais limpos, testáveis e reduzir o máximo de probabilidade de erros no código. 
-
-## Outras informações importantes no Cartão
-Se você deseja utilizar essa biblioteca em sua aplicação web lembre-se que outras informações importantes que é necessário pedir para o usuário é a data de validade do cartão, e o nome do titular, escrito exatamente da forma como aparece no cartão (por exemplo, com abreviaturas).
-Elas têm sido bastante utilizadas nas transações não presenciais, também para compensar a impossibilidade de verificar fisicamente o cartão.
