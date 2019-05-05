@@ -38,7 +38,7 @@ Abra o terminal na pasta em que a biblioteca já está instalada e digite os com
 > const CPF = require("validator-cpf-1");
 > console.log(CPF.cpfValidator('04114512608')))
 
->sudo npm test
+> sudo npm test
 
 ```
 Dentro dessa função CPF.cpfValidator('*numero do CPF*') você pode digitar outro número de CPF para saber se é um número válido ou não.
@@ -123,9 +123,13 @@ A primeira parte da conta terminamos, agora vamos para a segunda parte.
 ## Objetivo deste Projeto
 Construir uma biblioteca que atenda aos requisitos abaixo:
 **README.md** com descrição do módulo, instruções de instalação, uso e documentação da API.
+
 **index.js:** Biblioteca deve exportar uma função e fazer uso de features de ES6 onde for apropriado.
 package.json com nome, versão, descrição, autores, licença, dependências, scripts (pretest, test, ...)
 .eslintrc com configuração para linter (ver guia de estilo de JavaScript)
+
 **test/index.spec.js:** com as rotinas de teste escritas para esta biblioteca. Os testes devem ser implementados com Mocha e NYC
+
 **.gitignore**para ignorar node_modules ou outras pastas que não devem ser incluídas no controle de versões (git).
+
 Fazer uso do **TDD (Test Driven Development)** onde seu principal objetivo é criar testes antes de desenvolver determinado código, visando o mínimo de código possível. Os testes passando se faz necessário refatorar até satisfazer o objetivo final que é criar códigos mais limpos, testáveis e reduzir o máximo de probabilidade de erros no código. 
