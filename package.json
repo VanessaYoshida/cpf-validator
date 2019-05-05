@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VanessaYoshida/cpf-validator.git"
+    "url": "git+https://github.com/VanessaYoshida/cpf-validator"
   },
   "keywords": [
     "cpf",
@@ -21,13 +21,11 @@
     "cpf",
     "CPF"
   ],
-  "author": "Vanessa Yoshida",
-  "email": "vanessayoshida92@gmail.com",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/VanessaYoshida/cpf-validator/issues"
+  "author": {
+    "name": "Vanessa Yoshida",
+    "email": "vanessayoshida92@gmail.com"
   },
-  "homepage": "https://github.com/VanessaYoshida/cpf-validator#readme",
+  "license": "ISC",
   "dependencies": {
     "chai": "^4.2.0",
     "eslint": "^5.16.0",

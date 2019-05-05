@@ -35,7 +35,7 @@ $  sudo npm install cpf-validator
 Abra o terminal na pasta em que a biblioteca já está instalada e digite os comandos:
 ```node
 > node
-> const CPF = require("validator-cpf-1");
+> const CPF = require('cpf-validator');
 > console.log(CPF.cpfValidator('04114512608')))
 
 > sudo npm test
@@ -67,7 +67,7 @@ Dentro dessa pasta cria um arquivo echo > index.js (pode ser com o nome que voc�
 Dentro dessa pasta cria um arquivo echo > index.js (pode ser com o nome index.js)
 > code . (para abrir o arquivo com o visual studio. Ou caso use outro editor, abra o arquivo nesse editor)
 E cole os comandos: 
-> const CPF = require("cpf-validator");
+> const CPF = require('cpf-validator');
 > console.log(CPF.cpfValidator('87474718677'))
 ```
 Dentro dessa função CPF.cpfValidator('*número do CPF*') você pode digitar o número de outro CPF para saber se é um número válido ou não.
