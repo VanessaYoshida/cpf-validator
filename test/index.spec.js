@@ -6,10 +6,10 @@ describe('cpfValidator()', () => {
     it('Deveria retornar true quando o primeiro dígito verificador é zero: 04114512608', () => {
       expect(CPF.cpfValidator('04114512608')).to.equal(true);
     });
-    it('Deveria retornar true para a numeração: 87474718677', () => {
+    it('Deveria retornar true para uma numeração válida: 87474718677', () => {
       expect(CPF.cpfValidator('87474718677')).to.equal(true);
     });
-    it('Deveria retornar false para a numeração: 56434567865', () => {
+    it('Deveria retornar false para uma numeração inválida: 56434567865', () => {
       expect(CPF.cpfValidator('56434567865')).to.equal(false);
     });
   });

@@ -23,11 +23,11 @@ E também foi utilizado o Eslint para encontrar padrões problemáticos ou códi
 
 ```shell
 
-$  npm install cpf-validator
+$  npm install cpf-validator-new
 
 ou 
 
-$  sudo npm install cpf-validator
+$  sudo npm install cpf-validator-new
 
 ```
 
@@ -35,8 +35,8 @@ $  sudo npm install cpf-validator
 Abra o terminal na pasta em que a biblioteca já está instalada e digite os comandos:
 ```node
 > node
-> const CPF = require('cpf-validator');
-> console.log(CPF.cpfValidator('04114512608')))
+> const CPF = require('cpf-validator-new');
+> CPF.cpfValidator('04114512608'))
 
 > sudo npm test
 
@@ -45,7 +45,7 @@ Dentro dessa função CPF.cpfValidator('*numero do CPF*') você pode digitar out
 
 
 ## Para Desenvolvedores:
-Caso você esteja querendo entender como funciona a biblioteca e quer fazer testes, é necessário instalar as ferramentas necessárias. Segue passo-a-passo:
+Caso você esteja querendo entender como funciona a biblioteca e quer fazer testes, é necessário instalar as ferramentas necessárias. Segue o passo-a-passo de uma das formas que você pode fazer seus testes:
 Abra o seu terminal, seguindo os passos abaixo você vai criar uma pasta nova e vai instalar o que for necessário:
 
 ```node
@@ -56,7 +56,7 @@ Abra o seu terminal, seguindo os passos abaixo você vai criar uma pasta nova e 
 > npm init
 (nesse passo de cima ele cria automático um novo projeto com o arquivo package.json, depois vai ser requerido algumas informações que é necessário preencher)
 
-> npm install validator-cpf (que é para instalar a biblioteca)
+> npm install cpf-validator-new (que é para instalar a biblioteca)
 
 > npm install (para instalar o que for necessário para poder trabalhar na biblioteca)
 
@@ -67,11 +67,16 @@ Dentro dessa pasta cria um arquivo echo > index.js (pode ser com o nome que voc�
 Dentro dessa pasta cria um arquivo echo > index.js (pode ser com o nome index.js)
 > code . (para abrir o arquivo com o visual studio. Ou caso use outro editor, abra o arquivo nesse editor)
 E cole os comandos: 
-> const CPF = require('cpf-validator');
-> console.log(CPF.cpfValidator('87474718677'))
+> const CPF = require('./node_modules/cpf-validator-new/lib/index.js');
+> CPF.cpfValidator('87474718677')
+
 ```
 Dentro dessa função CPF.cpfValidator('*número do CPF*') você pode digitar o número de outro CPF para saber se é um número válido ou não.
 
+E para testar a função da biblioteca abra o terminal nessa pasta e digite: 
+node index.js
+
+Caso seja um cpf válido ele deve retornar true, senão ele retorna false.
 
 ## Roadmap oficial do projeto
 ### versão 1.0.0 (released)
