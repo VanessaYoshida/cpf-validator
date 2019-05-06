@@ -17,6 +17,7 @@ O CPF(Cadastro de Pessoa Física)  é um documento brasileiro emitido pela Secre
 
 ## Ferramentas Utilizadas
 Para esta biblioteca foram utilizados Javascript, Node.JS, Mocha, Chai e Nyc.
+Foi utilizado o Wallaby para fazer Teste Integrado Contínuo.
 E também foi utilizado o Eslint para encontrar padrões problemáticos ou códigos que não seguem determinadas diretrizes de estilo.
 
 ## Como Instalar:
@@ -36,7 +37,7 @@ Abra o terminal na pasta em que a biblioteca já está instalada e digite os com
 ```node
 > node
 > const CPF = require('cpf-validator-new');
-> CPF.cpfValidator('04114512608'))
+> CPF.cpfValidator('04114512608')
 
 > sudo npm test
 
@@ -45,7 +46,7 @@ Dentro dessa função CPF.cpfValidator('*numero do CPF*') você pode digitar out
 
 
 ## Para Desenvolvedores:
-Caso você esteja querendo entender como funciona a biblioteca e quer fazer testes, é necessário instalar as ferramentas necessárias. Segue o passo-a-passo de uma das formas que você pode fazer seus testes:
+Caso você esteja querendo entender como funciona a biblioteca e quer fazer testes, é necessário instalar as ferramentas necessárias. Segue o passo-a-passo de uma das formas que você pode fazer seus testes.
 Abra o seu terminal, seguindo os passos abaixo você vai criar uma pasta nova e vai instalar o que for necessário:
 
 ```node
