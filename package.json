@@ -1,6 +1,6 @@
 {
   "name": "cpf-validator-new",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "This library does cpf validation",
   "readmeFilename": "README.md",
   "main": "./lib/index.js",
