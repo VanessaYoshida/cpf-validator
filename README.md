@@ -1,5 +1,5 @@
 
-# Validador de CPF v.1.0.0
+# Validador de CPF v.1.0.2
 
 **Esta biblioteca se destina à fazer a verificação dos dados do CPF para uso em aplicações web.**
 Na versão atual é capaz de verificar se o número do CPF é valido ou não.
@@ -87,6 +87,9 @@ Caso seja um cpf válido ele deve retornar true, senão ele retorna false.
 - Verifica se os dígitos não estão repetidos.
 - Verifica se foi digitado apenas letras ou o campo está vazio.
 - Verifica se o tipo do campo é numérico, e caso seja retorna um erro. Pois só é aceito números do tipo string porque o cpf pode vir de diferentes formas.
+
+### versão 1.0.1 e 1.0.2
+- Apenas atualização de dados no README.md
 
 ## Cálculo para verificar o número do CPF
 Os últimos dois números do CPF que comprovam se esse é um número válido ou não. Para isso é necessário fazer o cálculo em duas partes.
